@@ -26,3 +26,14 @@ These scripts setup the Linux/Unix terminal environment for:
 There is also lots of useful information about networking, ssh, and many other topics included in the script.
 
 This repo will change periodically as new commands are added.
+
+### INSTRUCTIONS ###
+# In order to run this script on a given CLI: 
+# -- you must be in the home directory 
+# -- you must have runinstall.sh and /zsetup loaded in the home directory
+# -- you must run the following command:
+#
+#	. ./runinstall.sh
+#
+# NOTE: Don't forget the important dot-space at the beginning of the
+# command because this designates the current CLI as the target.
