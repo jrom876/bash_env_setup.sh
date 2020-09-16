@@ -6,7 +6,7 @@
 #			Creative Engineering Solutions, LLC
 # Contact:		cesllc876@gmail.com
 #			admin@jrom.io
-# Github Page:		www.github.com/jrom876
+# Github Page:		https://github.com/jrom876/bash_env_setup.sh/blob/master/zsetup/luner.sh
 #
 #############################################
 ####### PURPOSE: SYSTEM INTERROGATION #######
