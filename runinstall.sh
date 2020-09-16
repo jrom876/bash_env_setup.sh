@@ -37,7 +37,7 @@ runinstall () {
 	cd $maindir
 	for dir in $maindir/*.sh   	# list scripts in the form "~/<maindir>/file.sh"
 	do
-		chmod 755 $dir		# make sure the script is executable
+		chmod 755 $dir		# make sure the script is readable and executable
 		dir=${dir##*/}    	# keep everything after the final "/"
 		. ./$dir		# run each script in the current CLI  
 	done
