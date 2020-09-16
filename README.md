@@ -3,11 +3,11 @@ Custom bash aliases and commands for enhanced Linux/Unix CLI configuration.
 
 These scripts have three purposes:
 
-1. to create a customized bash framework for ultra-fast code development
+0. to create a customized bash framework for ultra-fast code development
 
-2. to allow the sysadmin to take control of the Linux/Unix terminal environment in a simple yet powerful way
+1. to allow the sysadmin to take control of the Linux/Unix terminal environment in a simple yet powerful way
 
-3. to provide a simplified way for sysadmins to setup new Raspian and Jetson Nano systems with all the dependencies and latest security features, as well as a wide range of other useful packages like nginx, ssh, netstat, nautilus, and vnc
+2. to provide a simplified way for sysadmins to setup new Raspian and Jetson Nano systems with all the dependencies and latest security features, as well as a wide range of other useful packages like nginx, ssh, netstat, nautilus, and vnc
 
 These scripts setup the Linux/Unix terminal environment for:
 
