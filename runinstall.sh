@@ -14,7 +14,7 @@
 # efficient file navigation, and better system control.
 ####################
 ### INSTRUCTIONS ###
-# In order to run this script on a given CLI: 
+# In order to run this script in a given CLI: 
 # -- you must be in the home directory 
 # -- you must have runinstall.sh and /zsetup loaded in the home directory
 # -- you must run the following command:
