@@ -35,6 +35,6 @@ In order to run this script in a given CLI:
 
 -- you must run the following command:
 
-      . ./runinstall
+      . ./runinstall.sh
 
 NOTE: Don't forget the important dot-space at the beginning of the command because this designates the current CLI as the target.
