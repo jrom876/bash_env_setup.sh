@@ -19,7 +19,7 @@
 # -- you must have runinstall.sh and /zsetup loaded in the home directory
 # -- you must run the following command:
 #
-#	. ./ungawa.sh
+#	. ./runinstall.sh
 #
 # NOTE: Don't forget the important dot-space at the beginning of the
 # command because this designates the current CLI as the target.
@@ -35,17 +35,14 @@ maindir=~/zsetup
 shopt -s expand_aliases
 runinstall () {
 	cd $maindir
-	for dir in $maindir/*.sh   # list scripts in the form "~/<maindir>/file.sh"
-##	cd ~/zsetup
-##	for dir in ~/zsetup/*.sh   # list scripts in the form "~/zsetup/file.sh"
+	for dir in $maindir/*.sh   	# list scripts in the form "~/<maindir>/file.sh"
 	do
 		chmod 755 $dir		# make sure the script is executable
 		dir=${dir##*/}    	# keep everything after the final "/"
 		. ./$dir		# run each script in the current CLI  
-#		sleep .1		# give the script a chance to load if needed
 	done
 	cd ~/
-	PS1="==> @@~\w ==>:\$ " ## when runinstall is called, the view changes
+	PS1="==> @@~\w ==>:\$ " 	## when runinstall is called, the view changes
 }
 runinstall 
 
