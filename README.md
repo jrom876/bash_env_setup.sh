@@ -8,7 +8,7 @@ These scripts have three purposes:
 
 1. to allow the sysadmin to take control of the Linux/Unix terminal environment in a simple yet powerful way
 
-2. to provide a simplified way for sysadmins to setup new Raspian and Jetson Nano systems with all the dependencies and latest security features, as well as a wide range of other useful packages like nginx, ssh, netstat, nautilus, and vnc
+2. to allow the sysadmin to setup new Raspian and Jetson Nano systems with all the dependencies and latest security features, as well as a wide range of other useful packages like nginx, ssh, netstat, nautilus, and vnc
 
 These scripts setup the Linux/Unix terminal environment for:
 
