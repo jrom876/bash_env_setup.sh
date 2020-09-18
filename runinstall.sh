@@ -6,6 +6,7 @@
 # Contact:		cesllc876@gmail.com
 #			admin@jrom.io
 # Github Page:		www.github.com/jrom876
+# URL:			https://github.com/jrom876/bash_env_setup.sh/blob/master/runinstall.sh
 #
 ###############
 ### PURPOSE ### 
