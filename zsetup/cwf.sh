@@ -11,13 +11,12 @@
 ### PURPOSE: DFA ### 
 ####################
 
-## First, use 'nttlpn', 'evproc', or 'netstat -tulp' to see all ports, 
+## First, use 'evproc' or 'netstat -tulp' to see all ports, 
 ## processes and services. 
 ## Then pick the process or service you want to start, stop or investigate.
 evproc () {
 	echo;
-	nttlpn;	echo;
-	# netstat -tulp;
+	netstat -tulp;
 	sudo ufw status;
 	## echo 'Open Internet Ports:'; lsoi; echo;
 	# lsTTy; echo;
