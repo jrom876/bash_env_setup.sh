@@ -12,7 +12,7 @@ These scripts have three purposes:
 
 These scripts setup the Linux/Unix terminal environment for:
 
-     fast navigation between system directories and files
+      fast navigation between system directories and files
 
       automated code compilation and execution
 
