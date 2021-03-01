@@ -32,7 +32,7 @@ In order to run this script in a given CLI:
 
 -- you must be in the home directory
 
--- you must have runinstall.sh and zsetup installed in the home directory
+-- you must have runinstall.sh and /zsetup installed in the home directory
 
 -- you must run the following command:
 
