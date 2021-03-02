@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 # File Name:		luner.sh
 # Written by:		Jacob Romero
 #			Creative Engineering Solutions, LLC
