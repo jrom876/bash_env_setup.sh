@@ -11,15 +11,65 @@
 ####### PURPOSE: LOCAL AND REMOTE NETWORK EVALUATION ########
 #############################################################
 
-## These local network evaluation routines:
+## These local network evaluation routines do three main things :
 
-## -- provide varying levels of nmap function calls (from simple 
-##	device mapping to full network device interrogation) 
-## -- place the nmap data in various reports 
-## -- provide cat calls for easy retreival of the reports
+## 0. 	provide varying levels of nmap function calls (from simple 
+##		device mapping to full network device interrogation) 
+## 1. 	place the nmap data in various reports 
+## 2. 	provide cat calls for easy retreival of the reports
 
-## See: https://www.wireshark.org/tools/oui-lookup.html#
+####################
+#### REFERENCES ####
+####################
+
 ## for device MAC lookup
+## https://www.wireshark.org/tools/oui-lookup
+## http://sqa.fyicenter.com/1000208_MAC_Address_Validator.html
+## http://sqa.fyicenter.com/1000194_Test_MAC_Address_Generator.html
+
+## for ip address lookup
+## https://www.lookip.net/ip/
+
+##################################
+shopt -s expand_aliases
+##################################
+
+########################
+### GLOBAL VARIABLES ###
+########################
+## None
+
+###########################
+#### TABLE OF CONTENTS ####
+###########################
+ecnet () {
+	echo
+	echo 'COMMAND LIST FOR:	netev.sh'; echo
+	echo 'NETWORK EVALUATION'; echo
+	echo 'COMMANDS	EXPLANATION'
+	echo 'ssta		show all listening ports and processes'
+	echo 'getnet		simple network evaluation'
+	echo 'evnet		specific network evaluation'
+	echo 'fevnet		full network evaluation'
+	echo 'ntlup		display open ports, sudo netstat -tlup'
+	echo 'wirsh		opens wireshark'
+	echo 'lkport $1	see if port $1 is available'; echo
+	echo 'IP ADDRESS METHODS'
+	echo 'gtiptables	to see iptables rule set'
+	echo 'getIP		returns my IP Address ($myip)'
+	echo 'gtmip		puts $myip into ~/reports/myip-list'
+	echo 'dltmip		deletes $myip from ~/reports/myip-list'; echo
+	echo 'CAT CALLS	FILE DISPLAYED'
+	echo 'ctssrep		ss_reports'
+	echo 'ctnmapl		nmap-list'
+	echo 'ctgw		Gateway-list'
+	echo 'cthp250		HP250-list'
+	echo 'ct12		RPi12-list'
+	echo 'ct13		RPi13-list'
+	echo 'ctjetson	Jetson-list'
+	echo 'ctzero		PiZero_W-list'
+	echo 'ctcrsh		crash_dump_report'; echo
+}
 
 getnet () {
 ## Provides simple device mapping of all network devices,
@@ -44,15 +94,43 @@ evnet () {
 		# echo 'Evaluating Gateway:';
 		# sudo nmap -v -sn -Pn 192.168.0.1;  # ping scan
 		# # sudo nmap -sS -Pn -O -v 192.168.0.1;  # script scan
-		# # sudo nmap -A -T4 -Pn 192.168.0.1 > ~/reports/Gateway-list.txt; echo; # full interrogation
-		# echo 'See ~/reports/Gateway-list.txt for nmap report'; echo;
+		# sudo nmap -A -T4 -Pn 192.168.0.1 > ~/reports/Gateway-list.txt; echo; # full interrogation
+		# echo 'See ~/reports/Gateway-list.txt for nmap report'
+		# echo 'Use ctgw to access Gateway nmap report'; echo;
+		#
+		# echo 'Evaluating HP-250 Notebook:';
+		# sudo nmap -v -sn -Pn 192.168.0.4;  # ping scan
+		# sudo nmap -sS -Pn -O -v 192.168.0.4;  # script scan
+		# sudo nmap -A -T4 -Pn 192.168.0.4 > ~/reports/HP250-list.txt; echo; # full interrogation
+		# echo 'See ~/reports/HP250-list.txt for nmap report'
+		# echo 'Use cthp250 to access HP-250 nmap report'; echo;
 		#
 		# echo 'Evaluating Rpi router 12:';
 		# # sudo nmap -v -sn -Pn 192.168.0.12;  # ping scan
 		# # sudo nmap -sS -Pn -O -v 192.168.0.12;  # script scan
 		# sudo nmap -A -T4 -Pn 192.168.0.12 > ~/reports/RPi12-list.txt; echo; # full interrogation
-		# echo 'See ~/reports/RPi12-list.txt for nmap report'; echo;
-		#		
+		# echo 'See ~/reports/RPi12-list.txt for nmap report'
+		# echo 'Use ct12 to access RPi12 nmap report'; echo;
+		#
+		# echo 'Evaluating Rpi router 13:';
+		# sudo nmap -v -sn -Pn 192.168.0.13;  # ping scan
+		# # sudo nmap -sS -Pn -O -v 192.168.0.13;  # script scan
+		# # sudo nmap -A -T4 -Pn 192.168.0.13 > ~/reports/RPi13-list.txt; echo; # full interrogation
+		# echo 'See ~/reports/RPi13-list.txt for nmap report'
+		# echo 'Use ct13 to access RPi13 nmap report'; echo;
+		#
+		# echo 'Evaluating Roku 1:';
+		# sudo nmap -v -sn -Pn 192.168.0.20;  # ping scan
+		# # sudo nmap -sS -Pn -O -v 192.168.0.20;  # script scan
+		# # sudo nmap -A -T4 -Pn 192.168.0.20; # full interrogation
+		# echo;
+		#
+		# echo 'Evaluating Roku 2:';
+		# sudo nmap -v -sn -Pn 192.168.0.21;  # ping scan
+		# # sudo nmap -sS -Pn -O -v 192.168.0.21;  # script scan
+		# # sudo nmap -A -T4 -Pn 192.168.0.21; # full interrogation
+		# echo;
+
 		echo 'Evaluating Jetson Nano Network Connection (30):';
 		# # sudo nmap -v -sn -Pn 192.168.0.30;  # ping scan
 		# # sudo nmap -sS -Pn -O -v 192.168.0.30;  # script scan
@@ -65,21 +143,65 @@ evnet () {
 		# sudo nmap -v -sn -Pn 192.168.0.31;  # ping scan
 		# # sudo nmap -sS -Pn -O -v 192.168.0.31;  # script scan
 		# # sudo nmap -A -T4 -Pn 192.168.0.31 > ~/reports/PiZero_W-list.txt; echo; # full interrogation
-		# echo 'See ~/reports/PiZero_W-list.txt for nmap report'; echo;
+		# echo 'See ~/reports/PiZero_W-list.txt for nmap report'
+		# echo 'Use ctzero to access PiZero nmap report'; echo;
+
 }
 
 #### CAT CALLS ####
 ## cat calls to display reports generated by this script
+alias ctsprl='cat ~/reports/nmap_super_list.txt | grep 192.168.0. -A 30'
 alias ctnmapl='cat ~/reports/nmap-list.txt | grep 192.168.0. -A 30'
 alias ctgw='cat ~/reports/Gateway-list.txt | grep 192.168.0. -A 30'
+alias cthp250='cat ~/reports/HP250-list.txt | grep 192.168.0. -A 30'
 alias ct12='cat ~/reports/RPi12-list.txt | grep 192.168.0. -A 30'
+alias ct13='cat ~/reports/RPi13-list.txt | grep 192.168.0. -A 30'
 alias ctjetson='cat ~/reports/Jetson-list.txt | grep 192.168.0. -A 30'
 alias ctzero='cat ~/reports/PiZero_W-list.txt | grep 192.168.0. -A 30'
 alias ctcrsh='cat ~/reports/crash_dump_report.txt'
+alias ctssrep='cat ~/reports/ss_reports'
+
+###########################
+## Look for an open port ##
+
+lkport () {
+	sudo nc localhost $1 < /dev/null; \
+	echo $?
+}
 
 ###################
 ### IP COMMANDS ###
 ###################
+
+################
+### fail2ban ###
+
+## Configuring fail2ban
+## https://www.howtogeek.com/675010/how-to-secure-your-linux-computer-with-fail2ban/
+
+## To see iptables rule set
+gtiptables () {
+	sudo iptables -L
+}
+## sudo iptables -L
+
+#### fail2ban setup and test commands in a nutshell:
+
+## install and setup:
+## sudo apt-get install fail2ban
+## sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
+## sudo gedit /etc/fail2ban/jail.local
+## sudo systemctl enable fail2ban
+## sudo systemctl start fail2ban
+
+## test:
+## sudo systemctl status fail2ban.service
+## sudo fail2ban-client status
+## sudo fail2ban-client status sshd
+
+################
+
+
 ## https://linuxconfig.org/how-to-turn-on-off-ip-forwarding-in-linux
 
 ## To get current IP forwarding status
@@ -115,8 +237,49 @@ alias ipt='ip tunnel show' # provides info on the system's tunnels over IP
 getIP () { # no input args; returns my IP address ($myip)
 	 myip="$( dig +short myip.opendns.com @resolver1.opendns.com )"
 	 echo "My WAN/Public IP address: ${myip}"
+	 echo $myip > ~/reports/myip-list
+	 chmod 600 ~/reports/myip-list	
+	 #echo 'Use gtmip to see My WAN/Public IP address'
 	 #echo $myip
 }
+
+gtmip () { 
+	myvar=$( cat ~/reports/myip-list )
+	if [[ -z $myvar ]]; then
+		echo 'myip-list is empty'
+	else
+		read -sp 'Enter Special Password: ' passvar
+		echo
+		if [[ $fmp = $passvar ]]; then
+			echo 'My WAN/Public IP address is: '
+			echo
+			cat ~/reports/myip-list; echo
+		else 
+			echo 'Wrong Password'
+			echo 'Access Denied'
+		fi
+	fi
+}
+
+dltmip () {
+	dmvar=$( cat ~/reports/myip-list )
+	if [[ -z $dmvar ]]; then
+		echo 'Sorry, myip-list is already empty'
+	else
+		read -sp 'Enter Special Password to delete myip-list: ' passvar
+		echo
+		if [[ $fmp = $passvar ]]; then
+			echo
+			echo $blanktext > ~/reports/myip-list
+			echo 'myip-list deleted'
+		else 
+			echo 'Wrong Password'
+			echo 'Access Denied'
+		fi
+	fi
+}
+
+
 getCurl () {
 	 com=$( curl ifconfig.me )
 	 echo "My WAN/Public IP address: ${com}"
@@ -231,146 +394,4 @@ denyPort () {
 ## redirects-in-linux-for-security-redhatdebianubuntususe-tested/
 
 #############################################
-
-##################################
-### NETWORK EVALUATION ROUTINE ###
-
-## LOCAL NETWORK ROUTINE ##
-#(0) First, run 'nmpe' to show all devices running on my local network.
-
-#(1) Run nttlpn to see all active internet processes and the ports they are using
-
-#(2) Choose a port to analyze and run 'ntipp <port>' to see all the IP addresses connected
-# to my server on selected port (arg)
-
-#(3) Run 'nmsd <debug level> <local ip address>' to perform
-# script scan on local or remote host in debug mode
-
-#(4) Run 'nmN <local ip address>' to scan a specific device on my local network
-# nmN $1 : detect open TCP ports on host ($1)
-# nmN <arg1> : sudo nmap -v -sn $1 (e.g. 192.168.0.0/24, or localhost)
-
-## REMOTE NETWORK ROUTINE ##
-#(0) 'mtrHost $1 $2 $3' : *** This command is VERY USEFUL ***
-# Do this command to find network hops/routers connecting remote host,
-# then create a report showing these connections and display the report.
-# mtr -rw -c 10 <whatever.com or IPvx address> >mtr-report-whatever | cat mtr-report-whatever
-# mtr -rw -c 10 google.com >mtr-report-google; cat mtr-report-google
-# mtr -rwb -c 10 google.com >mtr-report-google; cat mtr-report-google
-# e.g. 'mtr google .com 10' : this pings and reports on google.com 10 times
-
-#(1) Do nmS to force a script scan on any of the hosts/routers on the mtr-report
-# nmS <arg1> : sudo nmap -sS -Pn -O -v $1
-
-#(2) Do nmtop to search the top ports on remote or local hosts
-# nmtop <arg1> <arg2> : nmap --top-ports 10 192.168.0.1
-# nmtop $1 $2 : search top (int $1) ports of host ($2)
-
-#(3) Do pprobe to probe specific ports on remote or local routers
-# pprobe <arg1> <arg2> : sudo nping --tcp -p $1 --flags syn --ttl 2 $2
-# pprobe <arg1:port num, e.g. 22> <arg2:host (e.g 192.168.0.1, or google.com)>
-
-###########################
-### MTR (My Traceroute) ###
-# mtr -rwb -c 10 google.com >mtr-report-google | cat mtr-report-google
-# $1 = site name; $2 = domain; $3 = num pings 
-# -b = both IPaddr and hostname; -rw = report-wide; -c = count (num pings)
-mtrHost () { # e.g. <arg1:google> <arg2:.com> < arg3:10 pings>
-	mtr -rwb -c $3 $1$2 >~/mtr-reports/mtr-report-$1; cat ~/mtr-reports/mtr-report-$1
-}
-alias rt='route'
-alias rtn='sudo route -n'
-alias trv='traceroute -V' # shows traceroute version
-###################
-### NMAP ###
-############
-## For more information on nmap see: https://tools.kali.org/information-gathering/nmap
-
-## nmN finds all the wireless devices connected to host
-# This is very useful to find all the set wireless devices on my network
-nmN () { # detect open TCP ports on hoste.g. 192.168..0/24, or localhost
-	sudo nmap -v -sn $1
-}
-## nmP does ARP Ping on specified host(s)
-nmP () { # ARP Ping on specified host(s)
-	sudo nmap -PR -O -v $1
-}
-
-alias nmpe='sudo nmap -sP -PE -PA21,22,23,25,53,80,3389,5900,5939,8080 192.168.0.*'
-
-## nmsd runs scan on local or remote host in debug mode, skipping
-# host discovery (i.e accesses blocked hosts), in verbose/debug mode;
-# user sets debug level, funct takes 0 - 9 as <arg1>, default is 0
-# <arg2> is address, e.g. 192.168.0.-
-nmsd () {
-	sudo nmap -sC -Pn -v -d$1 $2
-}
-## nmC runs scan on local or remote host, skipping
-# host discovery, using OD Detection, in verbose/debug mode
-nmC () {
-	sudo nmap -sC -Pn -O -v $1
-}
-## nmT runs scan on open TCP hosts, skipping host discovery,
-# using OD Detection, running in verbose mode
-nmT () {
-	sudo nmap -sT -Pn -O -v $1
-}
-## nmS performs scan on host (e.g, localhost, 192.168.0.1, etc.)
-# Use this to script scan open ports on a remote or local host
-# using OD Detection while skipping host discovery;
-# arg must be a host designator
-nmS () {
-	sudo nmap -sS -Pn -O -v $1
-}
-## nmV performs scan on host (e.g, localhost, 192.168.0.1, etc.)
-# Use this to scan open ports on a remote or local host
-# using OD Detection while skipping host discovery;
-# arg must be a host designator
-nmV () {
-	sudo nmap -sV -Pn -O -v $1
-}
-# --top-ports
-# arg1 = number of ports to show, e.g. 20 = the top 20 ports
-# arg2 = a host name or IPvx address (e.g. google.com or 192.168.0.1)
-nmtop () {
-	nmap -Pn --top-ports $1 $2
-}
-ncSniffIP () {
-	ncat -v --exec "/bin/bash" --allow $1 -l 4444 --keep-open
-}
-###############
-### NETSTAT ###
-###############
-alias nt='netstat'
-alias ntg='netstat -g' # Display group connections
-alias nti='netstat -i' # Display interfaces
-alias ntm='netstat -M' # Display a list of masqueraded connections
-alias nts='netstat -s' # Display summary statistics
-alias ntr='netstat -r' # Display the kernel routing tables
-alias ntt='netstat -t' # Display a list of tcp connections
-alias ntu='netstat -u' # Display udp group connections
-alias ntatu='netstat -atu' # Show all sockets, TCP and UDP connections
-alias ntntu='netstat -ntu' # Display numerical tcp/udp addresses
-
-# Below is an Unix command to list all the IP addresses connected
-# to your server on selected port (arg)
-ntipp () {
-	netstat -tn 2>/dev/null | grep :$1 | awk '{print $5}' | cut -d: -f1 | sort | uniq -c | sort -nr | head
-}
-ntlp () {
-	sudo netstat -lnp | grep unix | awk '{print $1,FS,$7,FS,$9,FS,$10}'
-}
-alias ntlnp='sudo netstat -lnp' # Display open ports
-alias nttlpn='sudo netstat -t -u -l -p -n' # Too much to name
-# -t = TCP
-# -u = UDP
-# -l = listening ports only
-# -n = don't look up service and host names, just display numbers
-# -p = show process information (requires root privilege)
-# -r = display kernal routing tables
-
-###################################################################
-###################################################################
-################################################
-####### END OF LOCAL NETWORK EVALUATION ########
-################################################
+#############################################
