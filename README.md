@@ -10,19 +10,25 @@ These scripts have three purposes:
 
 2. to allow the sysadmin to setup new Raspian and Jetson Nano systems with all the dependencies and latest security features, as well as a wide range of other useful packages like nginx, ssh, netstat, nautilus, and vnc
 
-These scripts setup the Linux/Unix terminal environment for:
+These scripts setup the Linux/Unix terminal environment with:
 
-      fast navigation between system directories and files
+      automated code compilation, test and execution
 
-      automated code compilation and execution
-
-      automated dependency installation
+      automated dependency installation for new system configurations 
 
       local system and network interrogation
+      
+      custom functions for fast navigation between system directories and files
+      
+      custom utilities for crash dumps, coooling fans, etc.
+      
+      custom file writer functions for ultra-fast file retrieval
 
       simplified sw package updates, upgrades, repairs, and installations
 
       simplified remote network and traceroute evaluation
+      
+      and much more
 
 There is also lots of useful information about networking, ssh, and many other topics included in the script.
 
