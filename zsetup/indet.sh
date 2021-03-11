@@ -2,9 +2,9 @@
 
 # File Name:		indet.sh
 # Written by:		Jacob Romero
-#					Creative Engineering Solutions, LLC
-# Contact:			cesllc876@gmail.com
-#					admin@jrom.io
+#			Creative Engineering Solutions, LLC
+# Contact:		cesllc876@gmail.com
+#			admin@jrom.io
 # Github Page:		www.github.com/jrom876
 #
 ###########################################################
@@ -14,7 +14,7 @@
 ## These network and device evaluation routines do four main things:
 
 ## 0.	provide custom functions for Intrusion and Detection Control on 
-# 		local and remote hosts, devices and systems
+# 	local and remote hosts, devices and systems
 ## 1. 	provide various nmap, netstat, ss and mtr function calls  
 ## 2. 	place some of the extracted data in reports 
 ## 3. 	provide cat calls for easy retreival of the reports
@@ -72,7 +72,7 @@ device_array=(
 pi_head='B8:27:EB' 	## Raspberry Pi's OUI
 gw_head='20:76:00' 	## Actiontec Gateway OUI
 hua_head='D8:29:18' 	## HUAWEI TECHNOLOGIES CO.,LTD
-jt_head='00:04:4B'		## NVIDIA, Jetson Nano
+jt_head='00:04:4B'	## NVIDIA, Jetson Nano
 sam0_head='D0:D0:03' 	## Samsung Electronics Co.,LTD
 azw_head='5C:96:56'	## AzureWave Technology (Sony PS4)
 
@@ -91,24 +91,24 @@ lynuc_head='C0:C5:69' 	## SHANGHAI LYNUC CNC TECHNOLOGY CO
 huizou_head='34:F1:50'	## 中華人民共和国 Hui Zhou Gaoshengda Technology Co.,LTD
 
 zombie_array=(
-	'B8:27:EB:' \
-	'20:76:00:' \
-	'D8:29:18:' \
-	'00:04:4B:' \
-	'D0:D0:03:' \
-	'5C:96:56:' \
-	'00:15:37' 	\
-	'00:40:3E' 	\
-	'00:16:0E' 	\
-	'00:0E:2E' 	\
-	'34:99:71' 	\
-	'A8:24:EB' 	\
-	'E4:D5:3D' 	\
-	'64:B4:73' 	\
-	'D8:E0:E1' 	\
-	'A0:C5:F2' 	\
-	'00:AA:00' 	\
-	'C0:C5:69' 	\
+	'B8:27:EB' \
+	'20:76:00' \
+	'D8:29:18' \
+	'00:04:4B' \
+	'D0:D0:03' \
+	'5C:96:56' \
+	'00:15:37' \
+	'00:40:3E' \
+	'00:16:0E' \
+	'00:0E:2E' \
+	'34:99:71' \
+	'A8:24:EB' \
+	'E4:D5:3D' \
+	'64:B4:73' \
+	'D8:E0:E1' \
+	'A0:C5:F2' \
+	'00:AA:00' \
+	'C0:C5:69' \
 	'34:F1:50' )
 
 ###########################
@@ -159,15 +159,14 @@ ecindet () {
 
 ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ##
 ## prs_input():	This embedded python code takes complete or incomplete 
-## 				user input and converts it to a mac address format, 
-## 				inserting random hex numbers for any missing digits
-##	Call:		prs_input $1
-##	Requires:	$1 = complete or incomplete mac address input
-##	Dependencies:	
-#				parser()
-##				genrandhex()
-##				insert()
-##				makemac()
+## 		user input and converts it to a mac address format, 
+## 		inserting random hex numbers for any missing digits
+## Call:		prs_input $1
+## Requires:		$1 = complete or incomplete mac address input
+## Dependencies:	parser()
+##			genrandhex()
+##			insert()
+##			makemac()
 
 function prs_input {
 PARSE_ARG1="$1" python3 - <<END
@@ -199,11 +198,11 @@ def genrandhex():
 
 ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ##
 ## insert(mac):		Strips input down to alphanumeric chars, 
-##					and inserts random hex values where needed 
-##					to fill the 12-hex mac address number requirement
-##	Call:			insert $1
-##	Requires:		$1 = partial or complete input mac address
-##	Dependencies:	parser(), genrandhex()
+##			and inserts random hex values where needed 
+##			to fill the 12-hex mac address number requirement
+## Call:		insert $1
+## Requires:		$1 = partial or complete input mac address
+## Dependencies:	parser(), genrandhex()
 
 def insert(mac):
 	res = parser(mac)
@@ -223,11 +222,11 @@ def insert(mac):
 
 ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ##
 ## makemac(res):	Takes partial or complete user input and
-##					converts it to a mac address format, with
-## 					random hex numbers for any missing digits
-##	Call:			makemac $1
-##	Requires:		$1 = partial or complete input mac address
-##	Dependencies:	parser(), genrandhex(), insert()
+##			converts it to a mac address format, with
+## 			random hex numbers for any missing digits
+## Call:		makemac $1
+## Requires:		$1 = partial or complete input mac address
+## Dependencies:	parser(), genrandhex(), insert()
 
 def makemac(res):
 	res = list(insert(res))
@@ -251,18 +250,17 @@ END
 
 ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ##
 ##	gnxng(): 	Generates user-defined, non-conflicting zombie lists 
-##				for the nmap -sI Idle Scan Zombie Host options
+##			for the nmap -sI Idle Scan Zombie Host options
 ##	Call:		gnxng $1 $2
 ##	Requires:	$1 = zombie head from list
-#				$2 = number of zombies to create
-##	Dependencies:
-#				~/reports/gnxng/*
-##				prs_input()
-#				genHexRand()
-#				srch_devs()
-#				device_array
-#				zombie head list (or array)
-#				cx-- cat calls
+#			$2 = number of zombies to create
+##	Dependencies:	~/reports/gnxng/*
+##			prs_input()
+#			genHexRand()
+#			srch_devs()
+#			device_array
+#			zombie head list (or array)
+#			cx-- cat calls
 
 gnxng () { 	
 	START=1
@@ -381,10 +379,10 @@ gnxng () {
 }
 ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ##
 ##	genHexRand(): 	Generates a random decimal num between 0 and 16,
-##					formats it as a hex number string, and converts
-##					all a-f digits in it to upper case for consistency
-##	Call:			genHexRand 
-##	Requires:		0 args
+##			formats it as a hex number string, and converts
+##			all a-f digits in it to upper case for consistency
+##	Call:		genHexRand 
+##	Requires:	0 args
 ##	Dependencies:	None
 
 genHexRand () {
@@ -395,9 +393,9 @@ genHexRand () {
 
 ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ##
 ##	srch_devs(): 	Compares input zombie arg against device list and 
-##					returns error if a match exists
-##	Call:			srch_devs $1
-##	Requires:		$1 = zombie head to be checked against device list
+##			returns error if a match exists
+##	Call:		srch_devs $1
+##	Requires:	$1 = zombie head to be checked against device list
 ##	Dependencies:	device_array
 
 srch_devs () {
@@ -413,9 +411,9 @@ srch_devs () {
 }
 
 ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ##
-##	clrhead():		Recursively deletes the filepath argument provided 
-##	Call:			clrhead $1
-##	Requires:		$1 = filepath to be deleted
+##	clrhead():	Recursively deletes the filepath argument provided 
+##	Call:		clrhead $1
+##	Requires:	$1 = filepath to be deleted
 ##	Dependencies:	None
  
 clrhead () {
@@ -430,10 +428,10 @@ clrhead () {
 }
 
 ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ##
-##	cxdarray():		Displays Excluded Device List  and reloads it into
-##					its report location, ~/reports/indet_cx_lists/darray
-##	Call:			cxdarray
-##	Requires:		None
+##	cxdarray():	Displays Excluded Device List  and reloads it into
+##			its report location, ~/reports/indet_cx_lists/darray
+##	Call:		cxdarray
+##	Requires:	None
 ##	Dependencies:	None
 
 cxdarray () {
@@ -451,10 +449,10 @@ cxdarray () {
 }
 
 ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ##
-##	cxzarray():		Displays Complete Zombie List and reloads it into
-##					its report location, ~/reports/indet_cx_lists/zarray
-##	Call:			cxzarray
-##	Requires:		None
+##	cxzarray():	Displays Complete Zombie List and reloads it into
+##			its report location, ~/reports/indet_cx_lists/zarray
+##	Call:		cxzarray
+##	Requires:	None
 ##	Dependencies:	None
 
 cxzarray () {
