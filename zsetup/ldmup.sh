@@ -13,11 +13,13 @@
 
 ## This routine installs most of the dependencies required
 ## by this script and the system.
+## It can be ran in the CLI on new systems for fast configuration,
+## or it can be ran in our custom CLI environment.
 
 ####################
 ### INSTRUCTIONS ###
-# In order to run this script on a given CLI, you must be in the
-# directory where ldmup.sh is located (usually the home directory)
+# In order to run this script on a given CLI in new systems, you 
+# must be in the directory where ldmup.sh is located (usually the home directory)
 # and run the following command:
 #
 #	. ./ldmup.sh	for GENTLE install
