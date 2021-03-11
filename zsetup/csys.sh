@@ -74,7 +74,7 @@ alias bye='clear; exit'
 ############################
 
 ## PURPOSE:		To provide methods for storing, retrieving, and deleting
-##				crash dumps and crash dump reports
+##			crash dumps and crash dump reports
 
 #### See: https://askubuntu.com/questions/1160113/system-program-problem-detected
 #### For info on apport, see: https://wiki.ubuntu.com/Apport
@@ -182,7 +182,7 @@ ecfan () {
 
 ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ##
 ##	fanmod():	FAN SPEED UTILITY -- Allows User to safely modify the
-##				Jetson Nano cooling fan speed setting
+##			Jetson Nano cooling fan speed setting
 ##	Call:		fanmod <arg=fanspeed> (password required)
 ##	Requires:	$1 -- set <arg> between 100 and 125 for best results
 
@@ -268,15 +268,15 @@ fanmod() {
 
 ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ##
 ##	fanstatus():	Displays Fan Speed and CPU Temperatures, and 
-#					converts the thermal-fan temp1 reading from °C 
-#					to °F  for the convenience of Americans and Brits
-##	Call:			fanstatus
-##	Requires:		None
+#			converts the thermal-fan temp1 reading from °C 
+#			to °F  for the convenience of Americans and Brits
+##	Call:		fanstatus
+##	Requires:	None
 ##	Dependencies:	sensors
-##					extemp
-##					ctof (embedded python3)
-##					python3 import os
-##					python3 import math 
+##			extemp
+##			ctof (embedded python3)
+##			python3 import os
+##			python3 import math 
 
 fanstatus () {
 	echo "Fan Speed:	$( cat /sys/devices/pwm-fan/target_pwm )"; echo
@@ -289,8 +289,8 @@ fanstatus () {
 
 ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ##
 ##	gtfanspeed():	Displays Fan Speed
-##	Call:			gtfanspeed
-##	Requires:		None
+##	Call:		gtfanspeed
+##	Requires:	None
 
 gtfanspeed () {
 	echo "Fan Speed:	$( cat /sys/devices/pwm-fan/target_pwm )"
@@ -452,8 +452,7 @@ alias uno='uname -o'
 alias una='uname -a'
 ##########################
 #### FIND MY ENTROPY #####
-#### https://hackaday.com/2017/11/02/what-is-entropy-
-#### and-how-do-i-get-more-of-it/#raspberry-pi-and-the-hw-rng
+#### https://hackaday.com/2017/11/02/what-is-entropy-and-how-do-i-get-more-of-it/#raspberry-pi-and-the-hw-rng
 alias entropy='cat /proc/sys/kernel/random/entropy_avail'
 alias wentropy='watch -n 1 cat /proc/sys/kernel/random/entropy_avail'
 ##########################
