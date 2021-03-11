@@ -433,7 +433,7 @@ evDZone () {
 	echo 'cwRmx		Root Executability Removal -- '
 	echo '			A script that removes executability for all files in a system.'
 	echo '			This will disable the system and is difficult to repair.'; echo
-	echo 'cwCdfku		CD Land Mine -- This is beyond dangerous. Its Trumpian psyops.'
+	echo 'cwCdfku		CD Land Mine -- This is beyond dangerous.'
 	echo '			This plants a software land mine that will destroy a system'
 	echo '			when the unsuspecting user enters the cd command.'; echo
 	echo 'cwksr		Stop systemd-resolved -- This is a disruptive script that stops systemd-resolved'
