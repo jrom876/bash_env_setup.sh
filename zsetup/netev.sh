@@ -14,7 +14,7 @@
 ## These local network evaluation routines do three main things :
 
 ## 0. 	provide varying levels of nmap function calls (from simple 
-##		device mapping to full network device interrogation) 
+##	device mapping to full network device interrogation) 
 ## 1. 	place the nmap data in various reports 
 ## 2. 	provide cat calls for easy retreival of the reports
 
