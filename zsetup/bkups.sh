@@ -155,7 +155,7 @@ bkflist () {
 
 	for  dir in "${dir_array[@]}"; do 
 		echo "$dir" ## DBPRINT
-## The file is a directory, so we append a date directly to the new pathname
+## If the file is a directory, we append a date directly to the new pathname
 		if [ -d $dir ]; then
 		## When we already have a backup folder for this file, we must remove it
 		## and copy the new file in its place.
@@ -174,7 +174,7 @@ bkflist () {
 				    #echo "Backup of $dir completed" ## DBPRINT
 				done
 			fi
-## The file is not a directory, so it probably has a .* suffix which
+## If the file is not a directory, it probably has a .* suffix which
 ## must be stripped off and appended to the end of the new dated pathname.
 		else 
 			suff=".${dir#*.}"
@@ -211,7 +211,7 @@ bksyslist () {
 
 	for  dir in "${dir_array[@]}"; do 
 		echo "$dir" ## DBPRINT
-## The file is a directory, so we append a date directly to the new pathname
+## If the file is a directory, we append a date directly to the new pathname
 		if [ -d $dir ]; then
 		## Do we already have a backup folder for this file?
 			if [ -d ~/bkups/sysbkups/$dir$date ]; then
@@ -229,7 +229,7 @@ bksyslist () {
 				    #echo "Backup of $dir completed" ## DBPRINT
 				done
 			fi
-## The file is not a directory, so it probably has a .* suffix which
+## If the file is not a directory, it probably has a .* suffix which
 ## must be stripped off and appended to the end of the new dated pathname.
 		else 
 			suff=".${dir#*.}"
