@@ -15,8 +15,6 @@
 
 ##		-- viewing computer status
 ##		-- group and user control 
-##		-- crash dumps
-##		-- cooling fan settings
 ##		-- modifying file permissions
 
 ####################
