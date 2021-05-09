@@ -45,6 +45,8 @@ runinstall () {
 	cd ~/
 	PS1="==> @@~\w ==>:\$ " 	## when runinstall is called, the view changes
 }
+
+# Now we run the function we just defined, and watch the magic happen
 runinstall 
 
 ###################
