@@ -74,7 +74,7 @@ runinstall () {
 		. ./$dir		# run each script in the current CLI  
 	done
 	cd ~/
-	PS1="==> @@~\w ==>:\$ " 	## when runinstall is called, the view changes
+	PS1="==> @@~\w ==>:\$ " 	## when runinstall is called, the environment changes
 }
 
 # Now we run the function we just defined, and watch the magic happen
