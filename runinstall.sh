@@ -82,6 +82,23 @@ runinstall
 
 ###################
 
+###########################
+### ENVIRONMENT OPTIONS ###
+## Choose desired CLI environment by commenting/uncommenting
+## one of the options below
+# PS1="\w ==>:\$ "
+# PS1="==> \w ==>:\$ "
+# PS1="==> \t \w ==>:\$ "
+# PS1="\u@\h:\w\$ " ## default
+# PS1="\u@\t:\w\$ "
+# PS1="\u \s \t \w:\$ "
+# \u = user; \s = shell; \t = time; \h = host; \w = working directory
+# \$ = shows '$' if logged in as user; shows '#' if logged in as root
+# For more info on setting environment variables
+# see: https://ss64.com/bash/syntax-prompt.html
+# and: https://www.tutorialspoint.com/unix/unix-environment.htm
+#
+
 
 
 
