@@ -61,7 +61,7 @@ shopt -s expand_aliases
 #pip install flask
 #python -m flask --version
 
-#export FLASK_APP=homeslice
+#export FLASK_APP=home
 #flask run
 
 ecflask () {
@@ -129,6 +129,25 @@ shwflask () {
 	myvar=$( python -m pip show flask | grep -F "Version" )
 	echo "Flask $myvar"
 }
+
+## https://www.digitalocean.com/community/tutorials/how-to-build-and-
+## 	deploy-a-flask-application-using-docker-on-ubuntu-18-04
+
+#To get started, you will create a directory structure that will hold 
+#your Flask application. This tutorial will create a directory called 
+#TestApp in /var/www, but you can modify the command to name it 
+#whatever you’d like.
+#sudo mkdir /var/www/TestApp
+
+#Move in to the newly created TestApp directory:
+#cd /var/www/TestApp
+#Next, create the base folder structure for the Flask application:
+#sudo mkdir -p app/static app/templates
+
+#The -p flag indicates that mkdir will create a directory and 
+#all parent directories that don’t exist. In this case, mkdir 
+#will create the app parent directory in the process of making 
+#the static and templates directories.
 
 #####################################
 ####### END OF FLASK COMMANDS #######
@@ -236,49 +255,6 @@ alias dcprune='docker container prune'
 ####### END OF DOCKER COMMANDS #######
 ######################################
 
-## https://www.digitalocean.com/community/tutorials/how-to-build-and-
-## 		deploy-a-flask-application-using-docker-on-ubuntu-18-04
-
-#To get started, you will create a directory structure that will hold 
-#your Flask application. This tutorial will create a directory called 
-#TestApp in /var/www, but you can modify the command to name it 
-#whatever you’d like.
-
-#sudo mkdir /var/www/TestApp
-
-
-#Move in to the newly created TestApp directory:
-
-#cd /var/www/TestApp
-
-#Next, create the base folder structure for the Flask application:
-
-#sudo mkdir -p app/static app/templates
-
-#The -p flag indicates that mkdir will create a directory and 
-#all parent directories that don’t exist. In this case, mkdir 
-#will create the app parent directory in the process of making 
-#the static and templates directories.
-
-
-################################
-####### NODE.JS COMMANDS #######
-################################
-
-## https://www.tecmint.com/create-first-nodejs-app-in-linux/
-## https://www.tecmint.com/install-pm2-to-run-nodejs-apps-on-linux-server/
-
-#sudo node /var/www/html/app/server.js
-#sudo node /var/www/html/adminside/server.js
-#sudo pm2 start /var/www/html/app/server.js
-#sudo pm2 start /var/www/html/adminside/server.js
-
-## Left off here in my js tutorial
-## https://www.w3schools.com/js/js_array_iteration.asp
-
-#######################################
-####### END OF NODE.JS COMMANDS #######
-#######################################
 
 ###############################
 ####### SCREEN COMMANDS #######
@@ -403,32 +379,4 @@ kport () {
 ######################################
 ####### END OF SCREEN COMMANDS #######
 ######################################
-
-
-##################################
-#######  End of custom.sh  #######
-##################################
-
-## nc -ip <network name> <server name>
-
-
-
-## docker ps --format $FORMAT
-
-## docker attach <container name>
-
-## docker network create <new network name>
-## docker run --rn -ti --<new network name> --name <put new server name here> ubuntu:18.04 bash
-
-#DOCKERFORMAT=$( \nID\t{{.ID}}\nIMAGE\t{{.Image}}\nCOMMAND\t{{.Command}}\nCREATED\t{{.RunningFor}}\nSTATUS\t{{.Status}}\nPORTS\t{{.Ports}}\nNAMES\t{{.Names}}\n )
-## export $DOCKERFORMAT
-
-## $FORMAT
-## \nID\t{{.ID}}
-## \nIMAGE\t{{.Image}}
-## \nCOMMAND\t{{.Command}}
-## \nCREATED\t{{.RunningFor}}
-## \nSTATUS\t{{.Status}}
-## \nPORTS\t{{.Ports}}
-## \nNAMES\t{{.Names}}\n
 
