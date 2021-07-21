@@ -130,6 +130,7 @@ crtbkdir () {
 
 ## Saving files in ~/bkups/fbkups directory
 autofbkups () {
+## Uncomment the LUT you want to backup
 	echo ${test_bkups[@]} ## DBPRINT
 #	echo ${hp250_bkups[@]} ## DBPRINT
 #	echo ${jetson_bkups[@]} ## DBPRINT
