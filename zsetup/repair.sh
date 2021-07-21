@@ -132,7 +132,6 @@ function gtblame () {
 
 #### https://askubuntu.com/questions/1280944/gnome-shell-crashes-intermittently-sends-me-back-to-login/1287443#1287443
 
-
 #sudo nano /var/log/apport.log.1
 
 #ERROR: apport (pid 22117) Tue Oct 27 08:41:35 2020: this executable already crashed 2 times, ignoring
