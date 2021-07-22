@@ -2,9 +2,9 @@
 
 # File Name:		netev.sh
 # Written by:		Jacob Romero
-#					Creative Engineering Solutions, LLC
-# Contact:			cesllc876@gmail.com
-#					admin@jrom.io
+#			Creative Engineering Solutions, LLC
+# Contact:		cesllc876@gmail.com
+#			admin@jrom.io
 # Github Page:		www.github.com/jrom876
 #
 #############################################################
@@ -147,40 +147,7 @@ evnet () {
 		# sudo nmap -A -T4 -Pn 192.168.0.1 > ~/reports/Gateway-list.txt; echo; # full interrogation
 		# echo 'See ~/reports/Gateway-list.txt for nmap report'
 		# echo 'Use ctgw to access Gateway nmap report'; echo;
-		#
-		# echo 'Evaluating HP-250 Notebook:';
-		# sudo nmap -v -sn -Pn 192.168.0.4;  # ping scan
-		# sudo nmap -sS -Pn -O -v 192.168.0.4;  # script scan
-		# sudo nmap -A -T4 -Pn 192.168.0.4 > ~/reports/HP250-list.txt; echo; # full interrogation
-		# echo 'See ~/reports/HP250-list.txt for nmap report'
-		# echo 'Use cthp250 to access HP-250 nmap report'; echo;
-		#
-		# echo 'Evaluating Rpi router 12:';
-		# # sudo nmap -v -sn -Pn 192.168.0.12;  # ping scan
-		# # sudo nmap -sS -Pn -O -v 192.168.0.12;  # script scan
-		# sudo nmap -A -T4 -Pn 192.168.0.12 > ~/reports/RPi12-list.txt; echo; # full interrogation
-		# echo 'See ~/reports/RPi12-list.txt for nmap report'
-		# echo 'Use ct12 to access RPi12 nmap report'; echo;
-		#
-		# echo 'Evaluating Rpi router 13:';
-		# sudo nmap -v -sn -Pn 192.168.0.13;  # ping scan
-		# # sudo nmap -sS -Pn -O -v 192.168.0.13;  # script scan
-		# # sudo nmap -A -T4 -Pn 192.168.0.13 > ~/reports/RPi13-list.txt; echo; # full interrogation
-		# echo 'See ~/reports/RPi13-list.txt for nmap report'
-		# echo 'Use ct13 to access RPi13 nmap report'; echo;
-		#
-		# echo 'Evaluating Roku 1:';
-		# sudo nmap -v -sn -Pn 192.168.0.20;  # ping scan
-		# # sudo nmap -sS -Pn -O -v 192.168.0.20;  # script scan
-		# # sudo nmap -A -T4 -Pn 192.168.0.20; # full interrogation
-		# echo;
-		#
-		# echo 'Evaluating Roku 2:';
-		# sudo nmap -v -sn -Pn 192.168.0.21;  # ping scan
-		# # sudo nmap -sS -Pn -O -v 192.168.0.21;  # script scan
-		# # sudo nmap -A -T4 -Pn 192.168.0.21; # full interrogation
-		# echo;
-
+		
 		echo 'Evaluating Jetson Nano Network Connection (30):';
 		# # sudo nmap -v -sn -Pn 192.168.0.30;  # ping scan
 		# # sudo nmap -sS -Pn -O -v 192.168.0.30;  # script scan
@@ -188,18 +155,6 @@ evnet () {
 		# echo 'See ~/reports/Jetson-list.txt for Jetson nmap report'; echo; # full interrogation
 		echo 'Use ctjetson to access Jetson nmap report'
 		echo;
-		#
-		# echo 'Evaluating Pi Zero W (31):';
-		# sudo nmap -v -sn -Pn 192.168.0.31;  # ping scan
-		# # sudo nmap -sS -Pn -O -v 192.168.0.31;  # script scan
-		# # sudo nmap -A -T4 -Pn 192.168.0.31 > ~/reports/PiZero_W-list.txt; echo; # full interrogation
-		# echo 'See ~/reports/PiZero_W-list.txt for nmap report'
-		# echo 'Use ctzero to access PiZero nmap report'; echo;
-
-		# echo 'Evaluating Docker:';
-		# sudo nmap -v -sn 172.17.0.1;  # ping scan
-		# # sudo nmap -sS -Pn -O -v 172.17.0.1;  # script scan
-		# echo;
 }
 ###################
 #### CAT CALLS ####
@@ -207,11 +162,7 @@ evnet () {
 alias ctsprl='cat ~/reports/nmap_super_list.txt | grep 192.168.0. -A 30'
 alias ctnmapl='cat ~/reports/nmap-list.txt | grep 192.168.0. -A 30'
 alias ctgw='cat ~/reports/Gateway-list.txt | grep 192.168.0. -A 30'
-alias cthp250='cat ~/reports/HP250-list.txt | grep 192.168.0. -A 30'
-alias ct12='cat ~/reports/RPi12-list.txt | grep 192.168.0. -A 30'
-alias ct13='cat ~/reports/RPi13-list.txt | grep 192.168.0. -A 30'
 alias ctjetson='cat ~/reports/Jetson-list.txt | grep 192.168.0. -A 30'
-alias ctzero='cat ~/reports/PiZero_W-list.txt | grep 192.168.0. -A 30'
 alias ctcrsh='cat ~/reports/crash_dump_report.txt'
 alias ctssrep='cat ~/reports/ss_reports'
 
