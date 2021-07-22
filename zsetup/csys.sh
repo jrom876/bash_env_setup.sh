@@ -2,9 +2,9 @@
 
 # File Name:		csys.sh
 # Written by:		Jacob Romero
-#					Creative Engineering Solutions, LLC
-# Contact:			cesllc876@gmail.com
-#					admin@jrom.io
+#			Creative Engineering Solutions, LLC
+# Contact:		cesllc876@gmail.com
+#			admin@jrom.io
 # Github Page:		www.github.com/jrom876
 #
 ################################################
@@ -117,8 +117,8 @@ gnccomp () {
 }
 
 ## Full C Compiler Script 
-## 			Creates ELF, pre-processed, asm, object, and hex files
-##			from a given .c file and shows the ELF header information
+## 		Creates ELF, pre-processed, asm, object, and hex files
+##		from a given .c file and shows the ELF header information
 ## Call:	gnfccomp $1
 
 gnfccomp () {
@@ -134,8 +134,8 @@ gnfccomp () {
 }
 
 ## Full C++ Compiler Script 
-## 			Creates ELF, pre-processed, asm, object, and hex files
-##			from a given .cpp file and shows the ELF header information
+## 		Creates ELF, pre-processed, asm, object, and hex files
+##		from a given .cpp file and shows the ELF header information
 ## Call:	gnpcomp $1
 
 gnpcomp () {
@@ -298,15 +298,6 @@ alias lsm='lsmem'
 #less /proc/meminfo
 #more /proc/meminfo
 #ps -aux
-
-##################
-#### VALGRIND ####
-##################
-## https://stackoverflow.com/questions/63316024/program-terminated-with-signal-sigsegv-segmentation-fault
-## This function is overkill
-vlgrind () {
-	valgrind ./$1;
-}
 
 #################################
 ### MISCELLANEOUS FUNCTIONS ###
