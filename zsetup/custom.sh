@@ -2,9 +2,9 @@
 
 # File Name:		custom.sh
 # Written by:		Jacob Romero
-#					Creative Engineering Solutions, LLC
-# Contact:			cesllc876@gmail.com
-#					admin@jrom.io
+#			Creative Engineering Solutions, LLC
+# Contact:		cesllc876@gmail.com
+#			admin@jrom.io
 # Github Page:		www.github.com/jrom876/setup_env/zsetup/custom.sh
 #
 ####################################################
@@ -81,89 +81,48 @@ shopt -s expand_aliases
 #######################################################
 # main locations #
 alias mth='cd ~/'
-alias mtg='cd /home/gorg/'
 alias mtftp='cd /home/ftpuser/'
 alias mtsftp='cd /home/sftpuser/'
 alias mroot='cd /'
 alias mtetc='cd /etc/'
-
-# media locations #
-alias mtm='cd /media/jrom/; ls -la'
-# alias mtkj='cd /media/jrom/YG64_CACHE/kjversion'
-
-## adpoeticus
-alias mtadpoet='cd ~/adpoeticus/; ls -la'
-# sandbox locations #
-#~ alias mta='cd ~/Arduino/'
-#~ alias mt24='cd ~/Arduino/libraries/RF24-master/'
-alias mts='cd ~/sandbox/; ls -la'
-
-## move to coding challenge
-alias mtcc='cd ~/cruiseAuto/'
-alias mtfapp='cd /var/www/CESApp/'
 #################################
 ####### COMPOUND COMMANDS #######
 ####### WARNING!! #######
 ## ccx- prefixed commands are hereby resrerved for xdg-open commands 
 #################################
 
-
 #################################
 
+## These are examples only to demonstrate the basics of calling compiler functions
+## using custom bash scripts
+
 ## Laser Programs
-# alias ccoyz='cd ~/MachDSP_117/code/laserDriver-master/laserDriver; \
-# 		checkmk draw-test.check >draw-test.c; \
-# 		make -f make-test.mk draw'
-# alias cczygote='cd ~/MachDSP_117/code/laserDriver-master/laserDriver; \
-# 		gcc -c laserPointer laserPointer.c; \
-# 		gcc -shared -o laserPointer.so laserPointer.o'
 alias ccgui='cd ~/laserDriver; \
 		make -f make-gui.mk guion \
 		cd $OLDPWD'
-#alias ccarg='cd ~/laserDriver; \
-		#python3 lp_gui.py'
-alias ccfui='cd ~/laserDriver; \
-		python3 labjackgui.py'
-# alias cctui='cd ~/MachDSP_117/sandbox/gui_archive; \
-# 		python3 labjackgui_full.py'
+		
 alias cclaser='cd ~/laserDriver; \
 		gcc -g -o laserPointer laserPointer.c -lm `pkg-config --cflags --libs gtk+-2.0`; \
 		./laserPointer; \
 		cd $OLDPWD'
 		
-alias cctrees='cd ~/cruiseAuto/hacker; \
-		gcc -o trees trees.c -lm -lrt; \
-		./trees'
-		
-alias cchackr='cd ~/cruiseAuto/hacker; \
-		gcc -o hackr hackr.c -lm -lrt; \
-		./hackr'
-		
 alias ccplus='cd ~/cruiseAuto/hacker; \
 		g++ -o cplus cplus.cpp -lm -lrt; \
-		./cplus'
-			
-alias ccbday='cd ~/cruiseAuto/ai_hackr/bday_paradox; \
-		python3 bday_paradox.py'
-			
-alias ccnis='cd ~/cruiseAuto/ai_hackr/bday_paradox; \
-		jupyter notebook'
-			
-# alias cckp='labjack_kipling'
-# alias cctarget='cd ~/MachDSP_117/code/laserDriver-master/laserDriver; \
-# 		rm -f target; \
-# 		gcc -g -o target targetID.c -lm; \
-# 		./target'
-#alias ccmain='cd ~/laserDriver; \
-#		./main'
 
 alias ccprimeNums='cd ~/_files/primeNum; \
 		g++ -g -o primeNum primeNum.cpp -lm; \
 		./primeNum; echo; \
 		cd $OLDPWD'
 
-
 ###################################
+
+## These examples show how to compile C/C++ programs and explicitly create:
+##		-- pre-processed files (.i extension)
+##		-- assembly files (.s extension)
+##		-- object files (.o extension)
+##		-- posistionally independent executable files (.pie extension)
+##		-- hex files (.hex extension)
+
 ## https://www.opensourceforu.com/2020/02/understanding-elf-the-executable-and-linkable-format/
 ## https://linux-audit.com/elf-binaries-on-linux-understanding-and-analysis/
 
@@ -189,31 +148,6 @@ alias cvprimeNums='cd ~/_files/primeNum; \
 		echo; \
 		./primeNum; echo'
 
-alias cvstudy='cd ~/sandbox/example; \
-		gcc -g -o study study.c -lm -lrt; \
-		gcc -E study.c -o study.i; \
-		gcc -S study.c -fverbose-asm -o study.s; \
-		gcc -c study.c -o study.o; \
-		gcc -pie study.c -o study.pie; \
-		readelf -h study; \
-		objcopy -O ihex study study.hex; \
-		echo; \
-		./study'
-
-alias cvmstudy='cd ~/sandbox/example; \
-		make -f mkfile.mk; \
-		echo; \
-		readelf -h study primeNum; \
-		echo; \
-		./study'
-
-alias cvcstudy='cd ~/sandbox/example; \
-		make -f mkfile.mk clean; \
-		echo; \
-		readelf -h study primeNum; \
-		echo; \
-		ls -la'
-
 #######################
 ####### SciCalc #######
 		
@@ -222,10 +156,7 @@ alias ccsciCalc='cd ~/sandbox/sciCalc-master/sciCalc; \
  		./main; \
 		cd $OLDPWD'
 		
-alias ccmake='cd ~/sandbox/sciCalc-master/sciCalc; \
-		make -f make-test.mk'
-		
-alias cc1test='cd ~/sandbox/sciCalc-master/sciCalc; \
+alias cctest='cd ~/sandbox/sciCalc-master/sciCalc; \
 		checkmk lbtest.check >lbtest.c; \
 		gcc -g -o lbtest lbtest.c -lcheck -lm -lpthread -lrt -lsubunit -lcheck_pic; \
 		checkmk bpf2test.check >bpf2test.c; \
@@ -235,106 +166,7 @@ alias cc1test='cd ~/sandbox/sciCalc-master/sciCalc; \
 		checkmk ustripZtest.check >ustripZtest.c; \
 		gcc -g -o ustripZtest ustripZtest.c -lcheck -lm -lpthread -lrt -lsubunit -lcheck_pic'
 
-alias cc2sciCalc='cd ~/sandbox/sciCalc-master/sciCalc; \
-		checkmk lbtest.check >lbtest.c; \
-		gcc -g -o lbtest lbtest.c -lcheck -lm -lpthread -lrt -lsubunit -lcheck_pic; \
-		./lbtest'
 
-alias cc3sciCalc='cd ~/sandbox/sciCalc-master/sciCalc; \
-		checkmk bpf2test.check >bpf2test.c; \
-		gcc -g -o bpf2test bpf2test.c -lcheck -lm -lpthread -lrt -lsubunit -lcheck_pic; \
-		./bpf2test'
-
-alias cc4sciCalc='cd ~/sandbox/sciCalc-master/sciCalc; \
-		checkmk inrushItest.check >inrushItest.c; \
-		gcc -g -o inrushItest inrushItest.c -lcheck -lm -lpthread -lrt -lsubunit -lcheck_pic; \
-		./inrushItest'
-
-alias cc5sciCalc='cd ~/sandbox/sciCalc-master/sciCalc; \
-		checkmk ustripZtest.check >ustripZtest.c; \
-		gcc -g -o ustripZtest ustripZtest.c -lcheck -lm -lpthread -lrt -lsubunit -lcheck_pic; \
-		./ustripZtest'
-
-## make -f mkfile.mk rxdbm \
-
-#####################
-## Python Programs ##
-alias ccdtb='cd ~/sandbox/decToBinCalculator_master; \
-		python3 decToBinCalc.py; \
-		cd $OLDPWD'
-alias cctp='cd ~/sandbox/Python_Person_master/TestPerson; \
-		python3 TestPerson.py; \
-		cd $OLDPWD'
-
-## Python Programs back before the great linux crash of 2020
-# alias ccmt='cd ~/sandbox/benches/_python/LOC; \
-# 		python3 myThread_sync.py'
-# alias ccmtpdb='cd ~/sandbox/benches/_python/LOC; \
-# 		  python3 -m pdb myThread_sync.py'
-
-## Coding Challenge 
-
-alias cccc='cd ~/temp/coding_challenge; \
-		python3 vlanout.py'
-
-alias ccyycc='cd ~/temp/coding_challenge; \
-		python3 -m pdb vlanout.py'
-		
-alias ccddcc='cd ~/temp/coding_challenge; \
-		python3 driver1.py'
-		
-alias ccbapp='cd /var/www/CESApp; \
-		sudo bash start.sh'	
-				
-alias ccfapp='cd /var/www/CESApp; \
-		sudo docker cesapp.test'	
-			
-alias ccvapp='cd /var/www/TestApp; \
-		sudo bash start.sh'
-		
-alias ccruise='cd ~/cruiseAuto; \
-		python3 oldmycode.py'
-			
-alias ccintcalc='cd ~/sandbox/intCalc; \
-		python3 csvgen.py'
-			
-alias cctopgui='cd ~/sandbox/intCalc; \
-		python3 top_gui.py'
-		
-#~ alias ccmparse='cd ~/psetup; \
-		#~ python3 parse_input.py
-		#~ cd $OLDPWD'	
-
-alias ccquil='cd ~/statics; \
-		python3 equil.py
-		cd $OLDPWD'
-
-alias ccunits='cd ~/statics; \
-		python3 units.py
-		cd $OLDPWD'
-			
-####################################
-
-ecxstom () {
-	echo
-	echo 'CUSTOM COMPOUND COMMANDS'; echo
-	echo 'COMMANDS	EXPLANATION'
-	echo 'ccbapp		sudo bash start.sh'
-	echo 'cccc		python3 vlanout.py'
-	echo 'ccyycc		python3 -m pdb vlanout.py'
-	echo 'cclaser		./laserPointer'
-	echo 'ccgui		make -f make-gui.mk guion'
-	echo 'ccdtb		python3 decToBinCalc.py'
-	echo 'ccprimeNums	~/_files/primeNum ./primeNum'
-	echo 'ccsciCalc	~/sandbox/sciCalc-master/sciCalc make -f mc.mk; ./main'
-	echo 'cctp		~/sandbox/Python_Person_master/TestPerson python3 TestPerson.py'
-	echo 'ccruise		~/cruiseAuto python3 oldmycode.py'
-	echo 'ccintcalc	~/intCalc python3 csvgen.py'
-	echo 'cctopgui	~/intCalc python3 top_gui.py'
-	echo 'ccquil		~/statics python3 equil.py'
-	echo 'ccunits		~/statics python3 units.py'; echo
-}
-		
 		
 ####################################################
 
