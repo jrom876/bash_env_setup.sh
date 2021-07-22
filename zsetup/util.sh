@@ -2,9 +2,9 @@
 
 # File Name:		util.sh
 # Written by:		Jacob Romero
-#					Creative Engineering Solutions, LLC
-# Contact:			cesllc876@gmail.com
-#					admin@jrom.io
+#			Creative Engineering Solutions, LLC
+# Contact:		cesllc876@gmail.com
+#			admin@jrom.io
 # Github Page:		www.github.com/jrom876
 #
 #########################################
@@ -371,55 +371,16 @@ gtfanspeed () {
 	echo "Fan Speed:	$( cat /sys/devices/pwm-fan/target_pwm )"
 }
 
-## Experimental
-wyytemp () {
-	local senso=$( sensors | grep -e "temp1" )	
-	local senso0="${senso#*\+}"
-	senso0="${senso0%%\°*}"
-	#~ echo "senso0 = $senso0"	
-	export ILWIFI_TEMP_C
-	ILWIFI_TEMP_C="+${senso0}°C"
-	#~ echo "ILWIFI_TEMP_C = $ILWIFI_TEMP_C"	
-	export ILWIFI_TEMP_F
-	ILWIFI_TEMP_F=$( ctof $senso0 )
-	ILWIFI_TEMP_F="$ILWIFI_TEMP_F"
-	#~ echo "ilwifi temp1:        +$senso0°C  =  $ILWIFI_TEMP_F"	
-	THERMAL_FAN_TEMP_C="+${senso##*\+}"
-	export THERMAL_FAN_TEMP_C
-	#~ echo "THERMAL_FAN_TEMP_C = $THERMAL_FAN_TEMP_C"	
-	local senso1="${senso##*\+}"
-	senso1="${senso1%\°*}"	
-	THERMAL_FAN_TEMP_F=$( ctof $senso1 )
-	THERMAL_FAN_TEMP_F=$THERMAL_FAN_TEMP_F
-	export THERMAL_FAN_TEMP_F
-	#~ echo "thermal-fan temp1:   +$THERMAL_FAN_TEMP_C=  $THERMAL_FAN_TEMP_F"	
-	#~ echo 'wyytemp successful'
-}
-
-## SAVE ##
-#~ zeetemp () {
-	#~ local tempo=$( sensors | grep -e "temp1" )
-	#~ local tempo0="${tempo#*\+}"
-	#~ tempo0="${tempo0%%\°*}"
-	#~ local tempo1="${tempo##*\+}"
-	#~ tempo1="${tempo1%\°*}"
-	#~ local vargo0=$( ctof $tempo0 )
-	#~ echo "ilwifi temp1:        +$tempo0°C  =  $vargo0"
-	#~ local vargo1=$( ctof $tempo1 )
-	#~ echo "thermal-fan temp1:   +$tempo1°C  =  $vargo1"
-#~ }
-
 ##################################
 #### END OF FAN SPEED UTILITY ####
 ##################################
-
 
 ############################
 #### CRASH DUMP UTILITY ####
 ############################
 
-## PURPOSE:		To provide methods for storing, retrieving, and deleting
-##				crash dumps and crash dump reports
+## PURPOSE:	To provide methods for storing, retrieving, and deleting
+##		crash dumps and crash dump reports
 
 #### See: https://askubuntu.com/questions/1160113/system-program-problem-detected
 #### For info on apport, see: https://wiki.ubuntu.com/Apport
@@ -538,21 +499,9 @@ function rotatescreen () {
 # find your Touchscreen device with `xinput`
 
 function getdevice () {
-	#~ Dev1="$(xinput | grep master | cut -d" " -f2,3,4)";
 	Devs="$(xinput | grep master | cut -d" " -f2,3,4)";
-	#~ FrontStrap="$(FrontStrap%master*)";
-	#~ echo "$Dev1";
-	#~ echo
 	echo "$Devs";
-	#~ echo;
-	#~ yowza="$( echo $Devs | grep Virtual -m 1)"
-	#~ InputDevice="$(xinput | grep master | cut -d" " -f1)";
-	#~ InputDevice="$(xinput | grep master)";
-	#~ InputDevice="${InputDevice#*'Virtual'}"
-	#~ InputDevice=($InputDevice)
-	#~ echo "$yowza"
 }
-#%.*
 ######################################
 #### END OF XINPUT SCREEN UTILITY ####
 ######################################
