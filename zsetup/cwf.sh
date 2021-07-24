@@ -465,7 +465,14 @@ cwnfb () {
 		then
 			### Disable the user's ability to stop the attack: ###
 			
+			## cwDisable
+			
 			##### POSSIBLE CWF PAYLOADS #####
+			## NOTE: generally you should pick only one payload
+			
+			## cwTB
+			## cwRmx
+			## cwCdfku
 			
 			##### END OF CWF PAYLOADS #####
 
