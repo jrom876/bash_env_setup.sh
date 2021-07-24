@@ -59,13 +59,12 @@ ecacron () {
 	echo 'edacron		sudo nano anacrontab'
 	echo 'edahourly	cd ~/.local/etc/cron.hourly; sudo nano example'
 	echo 'edadaily	cd ~/.local/etc/cron.daily; sudo nano example';echo
-	echo 'acronspool	anacron -T -t ~/.local/etc/anacrontab -S /home/jrom/.var/spool/anacron'
-	echo 'rnacron		anacron -fn -t /home/jrom/.local/etc/anacrontab -S /home/jrom/.var/spool/anacron'
-	echo 'setacron	anacron -t /home/jrom/.local/etc/anacrontab -S /home/jrom/.var/spool/anacron'; echo
+	echo 'acronspool	anacron -T -t ~/.local/etc/anacrontab -S ~/.var/spool/anacron'
+	echo 'rnacron		anacron -fn -t ~/.local/etc/anacrontab -S ~/.var/spool/anacron'
+	echo 'setacron	anacron -t ~/.local/etc/anacrontab -S ~/.var/spool/anacron'; echo
 	echo 'lstmp		ls -la /tmp/'
 	echo 'rrtacron	restart anacron'
-	echo 'clrtmp		rm -f /tmp/hello /tmp/yowza /tmp/logtest'
-	echo 'llocal		ls -la /home/jrom/.local/etc'; echo
+	echo 'llocal		ls -la ~/.local/etc'; echo
 	echo '~~~~~~~ CRON ~~~~~~~'; echo
 	echo 'mcrh		cd /etc/cron.hourly; ls -la'
 	echo 'mcrd		cd /etc/cron.daily; ls -la'
@@ -100,15 +99,15 @@ edadaily () {
 }
 acronspool () {
 	echo 'Silence is success';
-	anacron -T -t ~/.local/etc/anacrontab -S /home/jrom/.var/spool/anacron
+	anacron -T -t ~/.local/etc/anacrontab -S ~/.var/spool/anacron
 }
 rnacron () {
-	anacron -fn -t /home/jrom/.local/etc/anacrontab \
-	-S /home/jrom/.var/spool/anacron
+	anacron -fn -t ~/.local/etc/anacrontab \
+	-S ~/.var/spool/anacron
 }
 setacron () {
-	anacron -t /home/jrom/.local/etc/anacrontab \
-	-S /home/jrom/.var/spool/anacron
+	anacron -t ~/.local/etc/anacrontab \
+	-S ~/.var/spool/anacron
 }
 rrtcron () {
 	sudo service cron restart;
@@ -118,10 +117,7 @@ rrtacron () {
 	sudo service anacron restart
 	systemctl status anacron
 }
-#~ alias rrtcron ='sudo service cron restart'
-alias lstmp='ls -la /tmp/; cat /tmp/hello; cat /tmp/yowza; cat /tmp/logtest'
-alias clrtmp='rm -f /tmp/hello /tmp/yowza /tmp/logtest'
-alias llocal='ls -a /home/jrom/.local/etc'
+
 
 ##############
 #### CRON ####
