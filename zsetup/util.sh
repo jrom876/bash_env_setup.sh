@@ -19,7 +19,7 @@
 ## 	-- the PS1 variable (in development)
 ##	-- xrandr screen utility
 ##	-- xinput device utility
-##	-- symbolic links (symlinks)
+##	-- symbolic links
 
 ###############################################################
 # Change History
