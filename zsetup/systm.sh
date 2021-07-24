@@ -14,6 +14,12 @@
 ## This file contains scripts for handling system services and processes
 
 ###############################################################
+# Change History
+
+# 5/12/2021 Jacob Romero 		Original code 
+
+###############################################################
+###############################################################
 ###############################################################
 #
 # Copyright (C) 2019, 2021 
@@ -57,12 +63,6 @@
 ## Linux Directory Structure
 ## https://www.howtogeek.com/117435/htg-explains-the-linux-directory-structure-explained/
 
-###############################################################
-# Change History
-
-# 5/12/2021 Jacob Romero 		Original code 
-
-###############################################################
 ##################################
 shopt -s expand_aliases
 ##################################
