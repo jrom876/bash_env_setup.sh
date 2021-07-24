@@ -17,34 +17,8 @@
 ##		-- group and user control 
 ##		-- modifying file permissions
 
-####################
-#### REFERENCES ####
-####################
-## https://github.com/pradeesi/Store_MQTT_Data_in_Database/blob/master/initialize_DB_Tables.py
-
-## https://www.howtogeek.com/117435/htg-explains-the-linux-directory-structure-explained/
-## https://www.tutorialkart.com/bash-shell-scripting/bash-split-string/
-## https://ryanstutorials.net/linuxtutorial/scripting.php
-## https://unix.stackexchange.com/questions/531938/parse-a-string-in-bash-script
-## https://linuxconfig.org/how-to-use-arrays-in-bash-script
-## See: https://askubuntu.com/questions/1160113/system-program-problem-detected
-## For info on apport, see: https://wiki.ubuntu.com/Apport
-## See: https://www.digitalocean.com/community/tutorials/how-to-add-and-delete-users-on-ubuntu-18-04
-## See: https://net2.com/how-to-switch-users-on-linux-ubuntu/
-## https://www.cyberciti.biz/open-source/command-line-hacks/compgen-linux-command/
-## https://unix.stackexchange.com/questions/151118/understand-compgen-builtin-command
-## https://www.gnu.org/software/bash/manual/html_node/Programmable-Completion-Builtins.html
-## see: https://www.binarytides.com/linux-check-processor/
-## for more info on hwloc / lstopo utility
-## https://www.open-mpi.org/projects/hwloc/tutorials/20120702-POA-hwloc-tutorial.html
-## https://hackaday.com/2017/11/02/what-is-entropy-and-how-do-i-get-more-of-it/#raspberry-pi-and-the-hw-rng
-## For CPU MEMORY USAGE See: cyberciti.biz
-## https://dottheslash.wordpress.com/2011/11/29/deleting-all-partitions-on-a-usb-drive/
-
-## Linux Directory Structure
-## https://www.howtogeek.com/117435/htg-explains-the-linux-directory-structure-explained/
-
 ###############################################################
+
 # Change History
 
 # 5/12/2021 Jacob Romero 		Original code 
@@ -77,6 +51,33 @@
 ###############################################################
 ###############################################################
 ###############################################################
+
+####################
+#### REFERENCES ####
+####################
+## https://github.com/pradeesi/Store_MQTT_Data_in_Database/blob/master/initialize_DB_Tables.py
+
+## https://www.howtogeek.com/117435/htg-explains-the-linux-directory-structure-explained/
+## https://www.tutorialkart.com/bash-shell-scripting/bash-split-string/
+## https://ryanstutorials.net/linuxtutorial/scripting.php
+## https://unix.stackexchange.com/questions/531938/parse-a-string-in-bash-script
+## https://linuxconfig.org/how-to-use-arrays-in-bash-script
+## See: https://askubuntu.com/questions/1160113/system-program-problem-detected
+## For info on apport, see: https://wiki.ubuntu.com/Apport
+## See: https://www.digitalocean.com/community/tutorials/how-to-add-and-delete-users-on-ubuntu-18-04
+## See: https://net2.com/how-to-switch-users-on-linux-ubuntu/
+## https://www.cyberciti.biz/open-source/command-line-hacks/compgen-linux-command/
+## https://unix.stackexchange.com/questions/151118/understand-compgen-builtin-command
+## https://www.gnu.org/software/bash/manual/html_node/Programmable-Completion-Builtins.html
+## see: https://www.binarytides.com/linux-check-processor/
+## for more info on hwloc / lstopo utility
+## https://www.open-mpi.org/projects/hwloc/tutorials/20120702-POA-hwloc-tutorial.html
+## https://hackaday.com/2017/11/02/what-is-entropy-and-how-do-i-get-more-of-it/#raspberry-pi-and-the-hw-rng
+## For CPU MEMORY USAGE See: cyberciti.biz
+## https://dottheslash.wordpress.com/2011/11/29/deleting-all-partitions-on-a-usb-drive/
+
+## Linux Directory Structure
+## https://www.howtogeek.com/117435/htg-explains-the-linux-directory-structure-explained/
 
 #######################
 shopt -s expand_aliases
