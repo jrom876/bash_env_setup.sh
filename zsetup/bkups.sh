@@ -65,7 +65,7 @@ shopt -s expand_aliases
 date=`date +%F`
 
 #### BACKUP LUTs ####
-
+## These must be specific to your system, and should be modified accordingly
 hp250_bkups=(
 	Arduino \
 	bookshelf \
@@ -134,9 +134,6 @@ autofbkups () {
 	echo ${test_bkups[@]} ## DBPRINT
 #	echo ${hp250_bkups[@]} ## DBPRINT
 #	echo ${jetson_bkups[@]} ## DBPRINT
-#	echo ${rpi12_bkups[@]} ## DBPRINT
-#	echo ${rpi13_bkups[@]} ## DBPRINT
-#	echo ${rpizero_bkups[@]} ## DBPRINT
 	cd ~/
 	echo; echo 'Running autofbkups. This may take a while'
 	echo
