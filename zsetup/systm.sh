@@ -13,28 +13,6 @@
 
 ## This file contains scripts for handling system services and processes
 
-####################
-#### REFERENCES ####
-####################
-## https://opensource.com/article/21/4/sysadmins-love-systemd?utm_medium=Email&utm_campaign=weekly&sc_cid=7013a000002w4C4AAI&elqTrackId=0384f6ab12de4f19b22bd587343fa262&elq=37f88420d43d4c0db3de1e5b9b171ed5&elqaid=619&elqat=1&elqCampaignId=460
-
-## Killing a Process: https://www.linux.com/training-tutorials/how-kill-process-command-line/
-## https://askubuntu.com/questions/565255/how-to-uninstall-teamviewer
-## wpa_supplicant:	http://www.linuxfromscratch.org/blfs/view/svn/basicnet/wpa_supplicant.html
-## https://en.wikipedia.org/wiki/Supplicant_(computer)
-## For info on parsing bash script, see:
-## https://unix.stackexchange.com/questions/531938/parse-a-string-in-bash-script
-## See: https://askubuntu.com/questions/907246/how-to-disable-systemd-resolved-in-ubuntu
-
-## Linux Directory Structure
-## https://www.howtogeek.com/117435/htg-explains-the-linux-directory-structure-explained/
-
-###############################################################
-# Change History
-
-# 5/12/2021 Jacob Romero 		Original code 
-
-###############################################################
 ###############################################################
 ###############################################################
 #
@@ -63,6 +41,28 @@
 ###############################################################
 ###############################################################
 
+####################
+#### REFERENCES ####
+####################
+## https://opensource.com/article/21/4/sysadmins-love-systemd?utm_medium=Email&utm_campaign=weekly&sc_cid=7013a000002w4C4AAI&elqTrackId=0384f6ab12de4f19b22bd587343fa262&elq=37f88420d43d4c0db3de1e5b9b171ed5&elqaid=619&elqat=1&elqCampaignId=460
+
+## Killing a Process: https://www.linux.com/training-tutorials/how-kill-process-command-line/
+## https://askubuntu.com/questions/565255/how-to-uninstall-teamviewer
+## wpa_supplicant:	http://www.linuxfromscratch.org/blfs/view/svn/basicnet/wpa_supplicant.html
+## https://en.wikipedia.org/wiki/Supplicant_(computer)
+## For info on parsing bash script, see:
+## https://unix.stackexchange.com/questions/531938/parse-a-string-in-bash-script
+## See: https://askubuntu.com/questions/907246/how-to-disable-systemd-resolved-in-ubuntu
+
+## Linux Directory Structure
+## https://www.howtogeek.com/117435/htg-explains-the-linux-directory-structure-explained/
+
+###############################################################
+# Change History
+
+# 5/12/2021 Jacob Romero 		Original code 
+
+###############################################################
 ##################################
 shopt -s expand_aliases
 ##################################
