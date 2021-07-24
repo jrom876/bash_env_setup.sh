@@ -65,7 +65,10 @@ shopt -s expand_aliases
 date=`date +%F`
 
 #### BACKUP LUTs ####
-## These must be specific to your system, and should be modified accordingly
+## These LUTs are lists of all the directories that we want to back up on a specified computer.
+## Each LUT must be specific to each computer system, and should be modified accordingly.
+
+## My full backup list for the HP-250
 hp250_bkups=(
 	Arduino \
 	bookshelf \
@@ -77,14 +80,14 @@ hp250_bkups=(
 	zsetup \
 	setup.sh )
 
-## My full backup array for the Jetson Nano
+## My full backup list for the Jetson Nano
 jetson_bkups=(
 	reports \
 	sandbox \
 	zsetup \
 	setup.sh )
 
-## Test backup array
+## Test backup list
 test_bkups=(
 	reports \
 	sandbox \
@@ -95,7 +98,7 @@ test_bkups=(
 #### DIRECTORY CREATORS ####
 ############################
 
-## Create All Required Directories
+## Create ALL Required Directories
 ## These must be specific to your system, and should be modified accordingly
 crtdirs () {
 	cd ~/
