@@ -110,6 +110,14 @@ degrees="°"
 ### GENERAL C COMPILER SCRIPT ###
 #################################
 
+## These commands allow the user to compile C/C++ programs and explicitly create:
+##		-- pre-processed files (.i extension)
+##		-- assembly files (.s extension)
+##		-- object files (.o extension)
+##		-- posistionally independent executable files (.pie extension)
+##		-- hex files (.hex extension)
+
+## Basic C Compiler Script 
 ## Call:	gncomp $1
 
 gnccomp () {
