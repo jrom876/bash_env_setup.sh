@@ -200,7 +200,6 @@ masksvc () {
 #umasksvc () {
 	#sudo systemctl unmask $1
 #}
-## systemctl list-unit-files --type=service | grep enabled
 
 #### Disabling/Enabling a Service ####
 svdsabl () {
