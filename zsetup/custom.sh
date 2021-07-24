@@ -74,7 +74,6 @@ shopt -s expand_aliases
 ### GLOBAL VARIABLES ###
 ########################
 ## None
-
 #######################################################
 ### MOVE TO LOCATION COMMANDS ###
 # CAUTION: Do not create any commands using "mtr"
@@ -85,6 +84,7 @@ alias mtftp='cd /home/ftpuser/'
 alias mtsftp='cd /home/sftpuser/'
 alias mroot='cd /'
 alias mtetc='cd /etc/'
+
 #################################
 ####### COMPOUND COMMANDS #######
 ####### WARNING!! #######
@@ -165,9 +165,7 @@ alias cctest='cd ~/sandbox/sciCalc-master/sciCalc; \
 		gcc -g -o inrushItest inrushItest.c -lcheck -lm -lpthread -lrt -lsubunit -lcheck_pic; \
 		checkmk ustripZtest.check >ustripZtest.c; \
 		gcc -g -o ustripZtest ustripZtest.c -lcheck -lm -lpthread -lrt -lsubunit -lcheck_pic'
-
-
-		
+	
 ####################################################
 
 ################################
@@ -183,7 +181,6 @@ alias ccxlinux='xdg-open https://www.howtogeek.com/117435/htg-explains-the-linux
 alias ccxacron='xdg-open https://opensource.com/article/21/2/linux-automation?utm_medium=Email&utm_campaign=weekly&sc_cid=7013a000002vqnQAAQ'
 alias ccxchrome='chromium-browser'
 alias ccxgithub='xdg-open https://github.com/jrom876'
-
 
 #####################################
 ### Raspberry Pi Web Server Setup ###
