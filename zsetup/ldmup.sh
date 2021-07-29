@@ -83,17 +83,11 @@ ldmup () {
 	mkdir bkups/fbkups
 	mkdir bkups/hp250_bkups
 	mkdir bkups/jetsonbkups
-	mkdir bkups/rpi12bkups
-	mkdir bkups/rpi13bkups
-	mkdir bkups/rpizerobkups
 	mkdir bkups/sysbkups
 	## System Directories
 	mkdir _files
-	mkdir mtr-reports
 	mkdir reports
 	mkdir sandbox
-	mkdir skeeter
-	mkdir tempo
 	cd $OLDPWD
 ## Then we load some custom files
 	#ldarray ${myfiles_array[@]}
