@@ -102,8 +102,8 @@ MY_FAN_SPEED=$( cat /sys/devices/pwm-fan/target_pwm )
 ###########################
 
 ##	PURPOSE:	COOLING FAN SETTINGS
-##				To allow the user to setup, modify and display 
-##				Jetson Nano Cooling Fan settings
+##			To allow the user to setup, modify and display 
+##			Jetson Nano Cooling Fan settings
 ##	SETUP:
 ## 		Basic setup:
 ##			0.	Open terminal
@@ -157,7 +157,7 @@ ecfan () {
 
 ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ##
 ##	fanmod():	FAN SPEED UTILITY -- Allows User to safely modify the
-##				Jetson Nano cooling fan speed setting
+##			Jetson Nano cooling fan speed setting
 ##	Call:		fanmod <arg=fanspeed> (password required)
 ##	Requires:	$1 -- set <arg> between 100 and 125 for best results
 
@@ -259,10 +259,10 @@ fanmod() {
 
 ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ##
 ##	fanstatus():	Displays Fan Speed and CPU Temperatures, and 
-#					converts the thermal-fan temp1 reading from °C 
-#					to °F for the convenience of Americans and Brits
-##	Call:			fanstatus
-##	Requires:		None
+#			converts the thermal-fan temp1 reading from °C 
+#			to °F for the convenience of Americans and Brits
+##	Call:		fanstatus
+##	Requires:	None
 ##	Dependencies:	sensors
 ##					extemp
 ##					ctof (embedded python3)
@@ -283,12 +283,12 @@ fanstatus () {
 }
 
 ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ##
-##	extemp():		Extracts ilwifi and fantemp readings from sensors, 
-##					converts them from °C to °F for the convenience of 
-##					Americans and Brits, places them in global 
-##					environment vars, and displays them in stdout
-##	Call:			extemp
-##	Requires:		sensors
+##	extemp():	Extracts ilwifi and fantemp readings from sensors, 
+##			converts them from °C to °F for the convenience of 
+##			Americans and Brits, places them in global 
+##			environment vars, and displays them in stdout
+##	Call:		extemp
+##	Requires:	sensors
 
 extemp () {
 	## Extract ilwifi and fantemp readings from sensors
