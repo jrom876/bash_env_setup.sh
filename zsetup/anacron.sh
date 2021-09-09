@@ -13,6 +13,16 @@
 
 ## Custom cron job scripts
 
+#~ A code tester walks into a bar.
+#~ Orders a beer.
+#~ Orders 3 beers.
+#~ Orders 2147483648 beers.
+#~ Orders 0 beers.
+#~ Orders -1 beers.
+#~ Orders nothing.
+#~ Orders a bear.
+#~ Tries to leave without paying.
+
 ###############################################################
 ###############################################################
 ###############################################################
