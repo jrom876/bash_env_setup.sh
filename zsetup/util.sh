@@ -264,10 +264,10 @@ fanmod() {
 ##	Call:		fanstatus
 ##	Requires:	None
 ##	Dependencies:	sensors
-##					extemp
-##					ctof (embedded python3)
-##					python3 import os
-##					python3 import math 
+##			extemp
+##			ctof (embedded python3)
+##			python3 import os
+##			python3 import math 
 
 fanstatus () {
 	echo "Fan Speed:	$( echo $MY_FAN_SPEED )"
@@ -364,8 +364,8 @@ END
 
 ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ##
 ##	gtfanspeed():	Displays Fan Speed
-##	Call:			gtfanspeed
-##	Requires:		None
+##	Call:		gtfanspeed
+##	Requires:	None
 
 gtfanspeed () {
 	echo "Fan Speed:	$( cat /sys/devices/pwm-fan/target_pwm )"
