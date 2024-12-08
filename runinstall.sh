@@ -4,7 +4,6 @@
 # Written by:		Jacob Romero
 #			Creative Engineering Solutions, LLC
 # Contact:		cesllc876@gmail.com
-#			admin@jrom.io
 # Github Page:		www.github.com/jrom876
 # URL:			https://github.com/jrom876/bash_env_setup.sh/blob/master/runinstall.sh
 #
@@ -21,7 +20,6 @@
 # Copyright (C) 2019, 2021 
 # Jacob Romero, Creative Engineering Solutions, LLC
 # cesllc876@gmail.com
-# admin@jrom.io 
 #
 # This program is free software; you can redistribute it
 # and/or modify it under the terms of the GNU General Public 
@@ -58,7 +56,7 @@
 ###################
 
 # First things first.
-# We must set the variable 'maindir' to the path where the .sh setup 
+# We must set the variable 'maindir' to the path where the zsetup/ .sh 
 # files are located, and then (maybe) export it for the other scripts to use. 
 maindir=~/zsetup
 #export maindir
