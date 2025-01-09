@@ -4,7 +4,6 @@
 # Written by:		Jacob Romero
 #			Creative Engineering Solutions, LLC
 # Contact:		cesllc876@gmail.com
-#			admin@jrom.io
 # Github Page:		www.github.com/jrom876
 #
 ###########################################################
